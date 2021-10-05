@@ -5,8 +5,8 @@
 covid19_supply
 
 # Author(s)
-Priyal Manish Sharma
-Vineeth Myneedi
+1.Priyal Manish Sharma <br/>
+2.Vineeth Myneedi
 
 
 # Database description

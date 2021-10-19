@@ -59,3 +59,17 @@ hospital_id : Each hospital_id is assigned to one hospital. Each hospital has on
 customer_id : Each customer_id is assigned to one customer. Each customer has one customer_id and it is required  to make delivery to correct customer<br/>
 delivery_id : Each delivery_id is assigned to one delivery package. Each delivery package has one delivery_id and it is required <br/>
 delivery_date : Each delivery has one date(singular) on which it needs to be delivered and it is required. Many deliveries can have same delivery_date (not unique) <br/>
+<br/>
+Dependent and Independent entities:<br/>
+a.Independent entities:<br/>
+customer<br/>
+hospital<br/>
+supplier<br/>
+b.Dependent entities:<br/>
+product_stock<br/>
+delivery_staff<br/>
+<br/>
+Dependent relationships<br/>
+supplier-manages-delivery_staff<br/>
+supplier_supplies_product_stock<br/>
+

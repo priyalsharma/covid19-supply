@@ -44,12 +44,11 @@ product_id : Each product_id is assigned to one product. Each product has one pr
 Entity product_stock: <br/>
 product_name : Each product has one product_name.  Each product_name is assigned to one product and it is required <br/>
 product_id : Each product_id is assigned to one product. Each product has one product_id and it is required <br/>
-supplier_id: Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/>
+available_quantity : The quantity of stocks that are currently available <br/>
 <br/>
 Enitiy supplier: <br/>
 supplier_id: Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/>
 supplier_name : Each supplier has one supplier_name(singular) and it is required. Many suppliers can have same name(not unique) <br/>
-product_count : Supplier stores the details of that product left in stock. product_count is not unique but singular. The required quantity must be present in stock to place delivery <br/>
 delivery_id : Each delivery_id is assigned to one delivery package. Each delivery package has one delivery_id and it is required <br/>
 delivery_staff_id : Each delivery_staff_id is assigned to one delivery agent. Each delivery agent has one delivery_staff_id and it is required <br/>
 <br/>
@@ -72,4 +71,17 @@ delivery_staff<br/>
 Dependent relationships<br/>
 supplier-manages-delivery_staff<br/>
 supplier_supplies_product_stock<br/>
+</br>
+Document supertypes, subtypes, and partitions in your glossary. (see Section 3.5. from the zyBook): </br>
+We do not have any of these in our project</br>
+</br>
+Cascade and restrict actions for dependency relationships:</br>
+1. supplier-manages-delivery_staff</br>
+Cascade on PK:delivery_id update and delete </br>
+Restrict on FK:delivery_id insert and update</br>
+2. supplier_supplies_product_stock</br>
+Cascade on PK:product_id update and delete </br>
+Restrict on FK:product_id insert and update</br>
+</br>
+Attribute types:</br>
 

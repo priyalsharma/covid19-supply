@@ -1,4 +1,4 @@
-## Entity: <br/>
+# Entity: <br/>
 1.	hospital: <br/>
       Synonym: medical center <br/>
       Description: The hospital entity represents the table that contains details of hospitals that can order the product stock <br/>

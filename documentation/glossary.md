@@ -14,7 +14,7 @@
 5.	delivery_staff: <br/>
 Synonym: transporter <br/>
    Description: The delivery_staff entity represents the table that contains details of transporters that deliver the ordered product stock to the hospital and customers. <br/>
-<br/>
+
 ## Entity Relationship: <br/>
 hospital places_order product_stock :  maxima: many-many minima: zero-zero <br/>
 customer orders product_stock: maxima: many-many minima: zero-zero <br/>
@@ -53,7 +53,7 @@ customer_id : Each customer_id is assigned to one customer. Each customer has on
 delivery_staff_id : Each delivery_staff_id is assigned to one delivery agent. Each delivery agent has one delivery_staff_id and it is required <br/>
 delivery_date : Each delivery has one date(singular) on which it needs to be delivered and it is required. Many deliveries can have same delivery_date (not unique)
 supplier_id: Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/><br/>
-<br/>
+
 ## Dependent and Independent entities:<br/>
 a.Independent entities:<br/>
 customer<br/>
@@ -62,14 +62,14 @@ supplier<br/>
 b.Dependent entities:<br/>
 product_stock<br/>
 delivery_staff<br/>
-<br/>
+
 ## Dependent relationships<br/>
 supplier-manages-delivery_staff<br/>
 supplier_supplies_product_stock<br/>
 </br>
 Document supertypes, subtypes, and partitions in your glossary. (see Section 3.5. from the zyBook): </br>
 We do not have any of these in our project</br>
-</br>
+
 ## Cascade and restrict actions for dependency relationships:</br>
 1. supplier-manages-delivery_staff</br>
 Cascade on PK:delivery_id update and delete </br>

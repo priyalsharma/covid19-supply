@@ -107,10 +107,12 @@ delivery_staff<br/>
 supplier-manages-delivery_staff<br/>
 supplier_supplies_product_stock<br/>
 </br>
-Document supertypes, subtypes, and partitions in your glossary. (see Section 3.5. from the zyBook): </br>
-We do not have any of these in our project</br>
 
 ## Cascade and restrict actions for dependency relationships:</br>
+Foreign keys that implement dependency relationships usually have the following referential integrity actions: </br>
+Cascade on primary key update and delete </br>
+Restrict on foreign key insert and update </br>
+</br>
 1. supplier-manages-delivery_staff</br>
 Cascade on PK:delivery_id update and delete </br>
 Restrict on FK:delivery_id insert and update</br>

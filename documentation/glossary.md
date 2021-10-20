@@ -67,7 +67,6 @@ Enitiy supplier: <br/>
 supplier_id: <br/>
 Type: VARCHAR <br/>
 Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/>
-<br/>
 supplier_name : <br/>
 Type: CHAR <br/>
 Each supplier has one supplier_name(singular) and it is required. Many suppliers can have same name(not unique) <br/>
@@ -79,7 +78,6 @@ Enitiy delivery_staff: <br/>
 delivery_id : <br/>
 Type: VARCHAR <br/>
 Each delivery_id is assigned to one delivery package. Each delivery package has one delivery_id and it is required <br/>
-<br/>
 hospital_id : <br/>
 Type: VARCHAR <br/>
 Each hospital_id is assigned to one hospital. Each hospital has one hospital_id and it is required <br/>

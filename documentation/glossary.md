@@ -25,34 +25,76 @@ supplier manages delivery_staff: maxima: one-many minima: one-one <br/>
 <br/>
 ## Attribute maxima & minima : <br/>
 Entity hospital: <br/> 
-hospital_id : Each hospital_id is assigned to one hospital. Each hospital has one hospital_id and it is required <br/>
-hospital_name : Each hospital has one hospital_name(singular) and it is required. Many hospitals can have same name(not unique) <br/>
-hospital_address : Each hospital has hospital_address. It is unique and required for delivery of products <br/>
+hospital_id : <br/>
+Type: VARCHAR <br/>
+Each hospital_id is assigned to one hospital. Each hospital has one hospital_id and it is required <br/>
+hospital_name : <br/>
+Type: CHAR <br/>
+Each hospital has one hospital_name(singular) and it is required. Many hospitals can have same name(not unique) <br/>
+hospital_address : <br/>
+Type: CHAR <br/>
+Each hospital has hospital_address. It is unique and required for delivery of products <br/>
 <br/>
 Entity customer: <br/>
-customer_id : Each customer_id is assigned to one customer. Each customer has one customer_id and it is required <br/>
-customer_name : Each customer has one customer_name(singular) and it is required. Many customers can have same name(not unique) <br/>
-customer_address : Each customer has customer_address. It is unique and required for delivery of products <br/>
-customer_age: It is not unique but singular and optional <br/>
+customer_id : <br/>
+Type: VARCHAR <br/>
+Each customer_id is assigned to one customer. Each customer has one customer_id and it is required <br/>
+customer_name : <br/>
+Type: CHAR <br/>
+Each customer has one customer_name(singular) and it is required. Many customers can have same name(not unique) <br/>
+customer_address : <br/>
+Type: CHAR <br/>
+Each customer has customer_address. It is unique and required for delivery of products <br/>
+customer_age: <br/>
+Type: INT <br/>
+It is not unique but singular and optional <br/>
 <br/>
 Entity product_stock: <br/>
-product_name : Each product has one product_name.  Each product_name is assigned to one product and it is required <br/>
-product_id : Each product_id is assigned to one product. Each product has one product_id and it is required <br/>
-available_quantity : The quantity of stocks that are currently available <br/>
-supplier_id: Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/>
+product_id : <br/>
+Type: VARCHAR <br/>
+Each product_id is assigned to one product. Each product has one product_id and it is required <br/>
+product_name : <br/>
+Type: CHAR <br/>
+Each product has one product_name.  Each product_name is assigned to one product and it is required <br/>
+available_quantity : <br/>
+Type: INT <br/>
+The quantity of stocks that are currently available <br/>
+supplier_id: <br/>
+Type: CHAR <br/>
+Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/>
 <br/>
 Enitiy supplier: <br/>
-supplier_id: Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/>
-supplier_name : Each supplier has one supplier_name(singular) and it is required. Many suppliers can have same name(not unique) <br/>
-delivery_id : Each delivery_id is assigned to one delivery package. Each delivery package has one delivery_id and it is required <br/>
+supplier_id: <br/>
+Type: CHAR <br/>
+Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/>
+<br/>
+supplier_name : <br/>
+Type: CHAR <br/>
+Each supplier has one supplier_name(singular) and it is required. Many suppliers can have same name(not unique) <br/>
+delivery_id : <br/>
+Type: VARCHAR <br/>
+Each delivery_id is assigned to one delivery package. Each delivery package has one delivery_id and it is required <br/>
 <br/>
 Enitiy delivery_staff: <br/>
-delivery_id : Each delivery_id is assigned to one delivery package. Each delivery package has one delivery_id and it is required <br/>
-hospital_id : Each hospital_id is assigned to one hospital. Each hospital has one hospital_id and it is required to make delivery to correct hosplital <br/>
-customer_id : Each customer_id is assigned to one customer. Each customer has one customer_id and it is required  to make delivery to correct customer<br/>
-delivery_staff_id : Each delivery_staff_id is assigned to one delivery agent. Each delivery agent has one delivery_staff_id and it is required <br/>
-delivery_date : Each delivery has one date(singular) on which it needs to be delivered and it is required. Many deliveries can have same delivery_date (not unique)
-supplier_id: Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/><br/>
+delivery_id : <br/>
+Type: VARCHAR <br/>
+Each delivery_id is assigned to one delivery package. Each delivery package has one delivery_id and it is required <br/>
+<br/>
+hospital_id : <br/>
+Type: VARCHAR <br/>
+Each hospital_id is assigned to one hospital. Each hospital has one hospital_id and it is required <br/>
+customer_id : <br/>
+Type: VARCHAR <br/>
+Each customer_id is assigned to one customer. Each customer has one customer_id and it is required <br/>
+delivery_staff_id : <br/>
+Type: VARCHAR <br/>
+Each delivery_staff_id is assigned to one delivery agent. Each delivery agent has one delivery_staff_id and it is required <br/>
+delivery_date : <br/>
+Type: DATE <br/>
+Each delivery has one date(singular) on which it needs to be delivered and it is required. Many deliveries can have same delivery_date (not unique)
+supplier_id: <br/>
+Type: CHAR <br/>
+Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/><br/>
 
 ## Dependent and Independent entities:<br/>
 a.Independent entities:<br/>

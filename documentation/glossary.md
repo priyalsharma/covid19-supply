@@ -60,12 +60,12 @@ available_quantity : <br/>
 Type: INT <br/>
 The quantity of stocks that are currently available <br/>
 supplier_id: <br/>
-Type: CHAR <br/>
+Type: VARCHAR <br/>
 Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/>
 <br/>
 Enitiy supplier: <br/>
 supplier_id: <br/>
-Type: CHAR <br/>
+Type: VARCHAR <br/>
 Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/>
 <br/>
 supplier_name : <br/>
@@ -93,7 +93,7 @@ delivery_date : <br/>
 Type: DATE <br/>
 Each delivery has one date(singular) on which it needs to be delivered and it is required. Many deliveries can have same delivery_date (not unique)
 supplier_id: <br/>
-Type: CHAR <br/>
+Type: VARCHAR <br/>
 Each supplier_id is assigned to one hospital. Each supplier has one supplier_id and it is required <br/><br/>
 
 ## Dependent and Independent entities:<br/>

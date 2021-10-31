@@ -22,7 +22,17 @@
   </head>
   
   <body>
-    <h1>HAVE A NICE WEEKEND</h1>
+    <h3>Entities in project</h3>
+		<a href="<c:url value='/jsps/task/task_menu.jsp'/>" target="_parent">hospital</a>
+		<br>
+		<a href="<c:url value='/jsps/task_status/task_status_menu.jsp'/>" target="_parent">customer</a>
+		<br> 
+		<a href="<c:url value='/jsps/campaign/campaign_menu.jsp'/>" target="_parent">product_stock</a>
+		<br>
+		<a href="<c:url value='/jsps/donation/donation_menu.jsp'/>" target="_parent">supplier</a>
+		<br> 
+		<a href="<c:url value='/jsps/charity_organization/charity_organization_menu.jsp'/>" target="_parent">delivery_staff</a>
+		<br>
     
   </body>
 </html>

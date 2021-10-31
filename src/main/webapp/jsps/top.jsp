@@ -37,17 +37,16 @@
 		<c:when test="${empty sessionScope.session_user }">
 			<a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">Login</a> |&nbsp; 
 			<a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">Register</a> |&nbsp; 
+			<a href="<c:url value='/jsps/hospital/hospital_menu.jsp'/>" target="_parent">hospital</a> |&nbsp; 
+			<a href="<c:url value='/jsps/customer/customer_menu.jsp'/>" target="_parent">customer</a> |&nbsp;
+			<a href="<c:url value='/jsps/product_stock/product_stock_menu.jsp'/>" target="_parent">product_stock</a> |&nbsp;
+			<a href="<c:url value='/jsps/supplier/supplier_menu.jsp'/>" target="_parent">supplier</a> |&nbsp;
+			<a href="<c:url value='/jsps/delivery_staff/delivery_staff_menu.jsp'/>" target="_parent">delivery_staff</a>
 		</c:when>
 		<c:otherwise>
 			Hello：${sessionScope.session_user.username };
 			<a href="<c:url value='/jsps/item.jsp'/>" target="body">Query Result</a> |&nbsp;&nbsp;
 			<a href="<c:url value='/UserServletLogout'/>" target="_parent">Logout</a> |&nbsp; 
-			<a href="<c:url value='/jsps/hospital/hospital_menu.jsp'/>" target="_parent">Create Entity1</a> |&nbsp; 
-			<a href="<c:url value='/jsps/customer/customer_menu.jsp'/>" target="_parent">Read Entity1</a> |&nbsp;
-			<a href="<c:url value='/jsps/product_stock/product_stock_menu.jsp'/>" target="_parent">Update Entity1</a> |&nbsp;
-			<a href="<c:url value='/jsps/supplier/supplier_menu.jsp'/>" target="_parent">Delete Entity1</a> |&nbsp;
-			<a href="<c:url value='/jsps/delivery_staff/delivery_menu.jsp'/>" target="_parent">Update Entity1</a>;
-
 		</c:otherwise>
 	</c:choose>
 

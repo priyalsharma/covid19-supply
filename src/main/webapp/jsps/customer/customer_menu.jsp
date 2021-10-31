@@ -26,7 +26,7 @@
     <br>
 	<a href="<c:url value='/jsps/customer/customer_create.jsp'/>" target="_parent">Create Customer</a> |&nbsp; 
 	<a href="<c:url value='/jsps/customer/customer_read.jsp'/>" target="_parent">Read Customer</a> |&nbsp;
-	<a href="<c:url value='/jsps/customer/customer_update.jsp'/>" target="_parent">Update </a> |&nbsp;	 
+	<a href="<c:url value='/jsps/customer/customer_update.jsp'/>" target="_parent">Update Customer</a> |&nbsp;	 
 	<a href="<c:url value='/jsps/customer/customer_delete.jsp'/>" target="_parent">Delete Customer</a>	
 	    
   </body>

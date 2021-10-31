@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Update Entity1</title>
+    <title>Create hospital</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,13 +21,18 @@
   </head>
   
   <body>
-  <h1>Update</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
-	<input type="hidden" name="method" value="search"/>
-	Update User   :<input type="text" name="username" value="${form.username }"/>
+  <h1>Create hospital</h1>
+<form action="<c:url value='/Entity1ServletCreate'/>" method="post">
+	hospital_id    :<input type="text" name="hospital_id" value="${form.username }"/>
 	<span style="color: red; font-weight: 900">${errors.username }</span>
 	<br/>
-	<input type="submit" value="Update Entity1"/>
+	hospital_name：<input type="password" name="hospital_name" value="${form.password }"/>
+	<span style="color: red; font-weight: 900">${errors.password }</span>
+	<br/>
+	hospital_address	：<input type="text" name="hospital_address" value="${form.email }"/>
+	<span style="color: red; font-weight: 900">${errors.email }</span>
+	<br/>
+	<input type="submit" value="Create hospital"/>
 </form>
   </body>
 </html>

@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read product_stock</title>
+    <title>Read Product Stock</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,12 +21,12 @@
   </head>
   
   <body>
-  <h1>Read product_stock</h1>
+  <h1>Read Product Stock</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletRead'/>" method="post">
+<form action="<c:url value='/Product_stockServletRead'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
-	product_id    :<input type="text" name="product_id" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+	product_id    :<input type="text" name="product_id" value="${form.product_id }"/>
+	<span style="color: red; font-weight: 900">${errors.product_id }</span>
 	<br/>
 <%-- 	Password：<input type="password" name="password" value="${form.password }"/>
 	<span style="color: red; font-weight: 900">${errors.password }</span>

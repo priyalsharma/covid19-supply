@@ -25,6 +25,7 @@
     <h1>Welcome to the Demo</h1>
     <br>
     <a href="<c:url value='/findAll'/>" target="body">Please list all the user in the table</a>&nbsp;&nbsp;
+    <a href="<c:url value='/findDelivery_staff'/>" target="body">Please list all the Delivery Staff</a>&nbsp;&nbsp;
  
     
   </body>

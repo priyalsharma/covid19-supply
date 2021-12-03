@@ -32,6 +32,9 @@
 	hospital_address	：<input type="text" name="hospital_address" value="${form.email }"/>
 	<span style="color: red; font-weight: 900">${errors.email }</span>
 	<br/>
+	delivery_id	：<input type="text" name="hospital_address" value="${form.email }"/>
+	<span style="color: red; font-weight: 900">${errors.email }</span>
+	<br/>
 	<input type="submit" value="Create hospital"/>
 </form>
   </body>

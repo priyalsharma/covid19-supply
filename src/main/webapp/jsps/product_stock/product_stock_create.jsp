@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Create product_stock</title>
+    <title>Create Product Stock</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,19 +21,19 @@
   </head>
   
   <body>
-  <h1>Create product_stock</h1>
-<form action="<c:url value='/Entity1ServletCreate'/>" method="post">
-	product_id    :<input type="text" name="product_id" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+  <h1>Create Product Stock</h1>
+<form action="<c:url value='/Product_stockServletCreate'/>" method="post">
+	product_id    :<input type="text" name="product_id" value="${form.product_id }"/>
+	<span style="color: red; font-weight: 900">${errors.product_id }</span>
 	<br/>
-	product_name：<input type="password" name="product_name" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+	product_name：<input type="password" name="product_name" value="${form.product_name }"/>
+	<span style="color: red; font-weight: 900">${errors.product_name }</span>
 	<br/>
-	available_quantity	：<input type="text" name="available_quantity" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	available_quantity	：<input type="text" name="available_quantity" value="${form.available_quantity }"/>
+	<span style="color: red; font-weight: 900">${errors.available_quantity }</span>
 	<br/>
-	supplier_id	：<input type="text" name="supplier_id" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id }"/>
+	<span style="color: red; font-weight: 900">${errors.supplier_id }</span>
 	<br/>
 	<input type="submit" value="Create product_stock"/>
 </form>

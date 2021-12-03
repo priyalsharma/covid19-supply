@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Entity</title>
+    <title>Update Supplier</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,28 +21,29 @@
   </head>
   
   <body>
-  <h1>Update Entity</h1>
+  <h1>Update Supplier</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username1" value="${entity1.username }" disabled/>
+	Supplier_id    :<input type="text" name="supplier_id" value="${supplier.getSupplier_id() }" disabled/>
 	<br/>
 	
-	Password：<input type="text" name="password1" value="${entity1.password }" disabled />
+	Supplier_name ：<input type="text" name="supplier_name" value="${supplier.getSupplier_name()}" disabled/>
 	<br/>
-	Email	：<input type="text" name="email1" value="${entity1.email }" disabled/>
+	Delivery_id	：<input type="text" name="delivery_id" value="${supplier.getDelivery_id()}" disabled/>
 	<br/>
 </form>
 <h1>Update the values below</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
+<form action="<c:url value='/SupplierServletUpdate'/>" method="post">
 		<input type="hidden" name="method" value="update"/>
-				<input type="hidden" name="username" value="${entity1.username }"/>
-	Password：<input type="password" name="password" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+				<input type="hidden" name="supplier_id" value="${supplier.getSupplier_id()}"/>
+	
+	Supplier_name：<input type="password" name="supplier_name" value="${form.supplier_name}"/>
+	<span style="color: red; font-weight: 900">${errors.supplier_name }</span>
 	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	Delivery_id	：<input type="text" name="delivery_id" value="${form.delivery_id }"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_id }</span>
 	<br/>
-	<input type="submit" value="Update Entity1"/>
+	<input type="submit" value="Update Supplier"/>
 </form>
 
 </body>

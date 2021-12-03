@@ -22,15 +22,15 @@
   
   <body>
   <h1>Create supplier </h1>
-<form action="<c:url value='/Entity1ServletCreate'/>" method="post">
-	supplier_id    :<input type="text" name="supplier_id" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+<form action="<c:url value='/SupplierServletCreate'/>" method="post">
+	supplier_id    :<input type="text" name="supplier_id" value="${form.supplier_id }"/>
+	<span style="color: red; font-weight: 900">${errors.supplier_id }</span>
 	<br/>
-	supplier_name ：<input type="password" name="supplier_name" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+	supplier_name ：<input type="password" name="supplier_name" value="${form.supplier_name }"/>
+	<span style="color: red; font-weight: 900">${errors.supplier_name }</span>
 	<br/>
-	delivery_id	：<input type="text" name="delivery_id" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	delivery_id	：<input type="text" name="delivery_id" value="${form.delivery_id }"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_id }</span>
 	<br/>
 	<input type="submit" value="Create supplier"/>
 </form>

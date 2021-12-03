@@ -21,28 +21,33 @@
   </head>
   
   <body>
-  <h1>Update Entity</h1>
+  <h1>Update Product Stock</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username1" value="${entity1.username }" disabled/>
+	product_id    :<input type="text" name="product_id" value="${product_stock.product_id }" disabled/>
 	<br/>
 	
-	Password：<input type="text" name="password1" value="${entity1.password }" disabled />
+	product_name ：<input type="text" name="product_name" value="${product_stock.product_name }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email1" value="${entity1.email }" disabled/>
+	available_quantity	：<input type="text" name="available_quantity" value="${product_stock.available_quantity }" disabled/>
+	<br/>
+	supplier_id	：<input type="text" name="supplier_id" value="${product_stock.supplier_id }" disabled/>
 	<br/>
 </form>
 <h1>Update the values below</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
+<form action="<c:url value='/Product_supplyServletUpdate'/>" method="post">
 		<input type="hidden" name="method" value="update"/>
-				<input type="hidden" name="username" value="${entity1.username }"/>
-	Password：<input type="password" name="password" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+				<input type="hidden" name="product_id" value="${product_stock.product_id }"/>
+	product_name：<input type="password" name="product_name" value="${form.product_name }"/>
+	<span style="color: red; font-weight: 900">${errors.product_name }</span>
 	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	available_quantity	：<input type="text" name="available_quantity" value="${form.available_quantity }"/>
+	<span style="color: red; font-weight: 900">${errors.available_quantity }</span>
 	<br/>
-	<input type="submit" value="Update Entity1"/>
+	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id }"/>
+	<span style="color: red; font-weight: 900">${errors.supplier_id }</span>
+	<br/>
+	<input type="submit" value="Update Product Stock"/>
 </form>
 
 </body>

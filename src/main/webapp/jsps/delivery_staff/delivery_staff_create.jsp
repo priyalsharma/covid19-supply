@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Create delivery_staff</title>
+    <title>Create Delivery_staff</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,25 +21,19 @@
   </head>
   
   <body>
-  <h1> Create delivery_staff</h1>
-<form action="<c:url value='/Entity1ServletCreate'/>" method="post">
-	delivery_id    :<input type="text" name="delivery_staff_id" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+  <h1> Create Delivery_staff</h1>
+<form action="<c:url value='/Delivery_staffServletCreate'/>" method="post">
+	delivery_id    :<input type="text" name="delivery_id" value="${form.delivery_id }"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_id }</span>
 	<br/>
-	hospital_id：<input type="password" name="hospital_id" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+	delivery_staff_id	：<input type="text" name="delivery_staff_id" value="${form.delivery_staff_id }"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_staff_id }</span>
 	<br/>
-	customer_id	：<input type="text" name="customer_id" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	delivery_date	：<input type="text" name="delivery_date" value="${form.delivery_date }"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_date }</span>
 	<br/>
-	delivery_staff_id	：<input type="text" name="delivery_staff_id" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
-	<br/>
-	delivery_date	：<input type="text" name="delivery_date" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
-	<br/>
-	supplier_id	：<input type="text" name="supplier_id" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id }"/>
+	<span style="color: red; font-weight: 900">${errors.supplier_id }</span>
 	<br/>
 	<input type="submit" value="Create delivery_staff"/>
 </form>

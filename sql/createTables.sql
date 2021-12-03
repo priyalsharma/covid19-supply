@@ -1,5 +1,24 @@
 CREATE DATABASE covid19_supply;
 use covid19_supply;
+
+CREATE TABLE user
+(
+  
+  username VARCHAR(50) primary key,
+  `password` VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE entity1 
+(
+  
+  username VARCHAR(50) primary key,
+  `password` VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL
+);
+
+
 SET FOREIGN_KEY_CHECKS=0;
 CREATE TABLE hospital(
 hospital_id VARCHAR(10) UNIQUE NOT NULL,

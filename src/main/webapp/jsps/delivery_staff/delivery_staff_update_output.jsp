@@ -21,28 +21,32 @@
   </head>
   
   <body>
-  <h1>Update Entity</h1>
+  <h1>Update Delivery_staff</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username1" value="${entity1.username }" disabled/>
+	delivery_id:<input type="text" name="delivery_id" value="${delivery_staff.delivery_id }" disabled/>
 	<br/>
-	
-	Password：<input type="text" name="password1" value="${entity1.password }" disabled />
+	delivery_staff_id:<input type="text" name="delivery_staff_id" value="${delivery_staff.delivery_staff_id }" disabled/>
 	<br/>
-	Email	：<input type="text" name="email1" value="${entity1.email }" disabled/>
+	delivery_date	：<input type="text" name="delivery_date" value="${delivery_staff.delivery_date }" disabled/>
+	<br/>
+	supplier_id	：<input type="text" name="supplier_id" value="${delivery_staff.supplier_id }" disabled/>
 	<br/>
 </form>
 <h1>Update the values below</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
+<form action="<c:url value='/Delivery_staffServletUpdate'/>" method="post">
 		<input type="hidden" name="method" value="update"/>
-				<input type="hidden" name="username" value="${entity1.username }"/>
-	Password：<input type="password" name="password" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+				<input type="hidden" name="delivery_id" value="${delivery_staff.delivery_id }"/>
+	delivery_staff_id：<input type="password" name="delivery_staff_id" value="${form.delivery_staff_id }"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_staff_id }</span>
 	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	delivery_date	：<input type="text" name="delivery_date" value="${form.delivery_date }"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_date }</span>
 	<br/>
-	<input type="submit" value="Update Entity1"/>
+	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id }"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_date }</span>
+	<br/>
+	<input type="submit" value="Update Delivery_staff"/>
 </form>
 
 </body>

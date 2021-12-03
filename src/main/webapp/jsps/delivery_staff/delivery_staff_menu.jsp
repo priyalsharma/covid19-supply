@@ -22,7 +22,7 @@
   </head>
   
   <body>
-    <h2>CRUD operations for supplier </h2>
+    <h2>CRUD operations for delivery_staff </h2>
     <br>
 	<a href="<c:url value='/jsps/delivery_staff/delivery_staff_create.jsp'/>" target="_parent">Create delivery_staff</a> |&nbsp; 
 	<a href="<c:url value='/jsps/delivery_staff/delivery_staff_read.jsp'/>" target="_parent">Read delivery_staff</a> |&nbsp;

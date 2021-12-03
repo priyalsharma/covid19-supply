@@ -18,17 +18,27 @@ import entity1.domain.Entity1;
  * DDL functions performed in database
  */
 public class Entity1Dao {
+	
+	/**
+	 * user name to connect to the database 
+	 */
+	private String MySQL_user = "root"; //TODO change user
+	
+	/**
+	 * password of your username to connect to the database
+	 */
+	private String MySQL_password = "mvt@3107"; //TODO change password
 
-	public static Entity1 findByUsername(String username) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+	public Entity1 findByUsername(String username) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		Entity1 entity1 = new Entity1();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore","test", "12345678");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/covid19_supply", MySQL_user, MySQL_password);
 		    String sql = "select * from entity1 where username=?";
 		    PreparedStatement preparestatement = connect.prepareStatement(sql); 
 		    preparestatement.setString(1,username);
 		    ResultSet resultSet = preparestatement.executeQuery();
-		    //ResultSet resultSet  = preparestatement.executeUpdate();
+
 		    while(resultSet.next()){
 		    	String user_name = resultSet.getString("username");
 		    	if(user_name.equals(username)){
@@ -53,10 +63,9 @@ public class Entity1Dao {
 	 */
 	
 	public void add(Entity1 form) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-		System.out.println("We are here");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore","test", "12345678");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/covid19_supply", MySQL_user, MySQL_password);
 			
 			String sql = "insert into entity1 values(?,?,?)";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
@@ -71,16 +80,18 @@ public class Entity1Dao {
 	}
 	
 	
+	/**
+	 * @param form
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 */
 	public void update(Entity1 form) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-		System.out.println("Now going to update");
-		System.out.println(form);
-
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore","test", "12345678");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/covid19_supply", MySQL_user, MySQL_password);
 			
 			String sql = "UPDATE entity1 SET password = ?, email = ? where username = ?;";
-			System.out.println("Update Executed");
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
 		    preparestatement.setString(1,form.getPassword());
 			preparestatement.setString(2,form.getEmail());
@@ -93,15 +104,18 @@ public class Entity1Dao {
 	}
 	
 	
+	/**
+	 * @param username
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 */
 	public void delete(String username) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-		System.out.println("Now going to delete");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore","test", "12345678");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/covid19_supply", MySQL_user, MySQL_password);
 			
 			String sql = "delete from entity1 where username = ?";
-			System.out.println(username);
-			System.out.println("Delete Executed");
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
 		    preparestatement.setString(1,username);
 		    preparestatement.executeUpdate();

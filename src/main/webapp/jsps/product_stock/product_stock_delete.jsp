@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete product_stock</title>
+    <title>Delete Product Stock</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,11 +21,11 @@
   </head>
   
   <body>
-  <h1>Delete product_stock</h1>
-<form action="<c:url value='/Entity1ServletDelete'/>" method="post">
+  <h1>Delete Product Stock</h1>
+<form action="<c:url value='/Product_stockServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
-	product_id  :<input type="text" name="product_id" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+	product_id  :<input type="text" name="product_id" value="${form.product_id }"/>
+	<span style="color: red; font-weight: 900">${errors.product_id }</span>
 	<br/>
 	<input type="submit" value="Delete product_stock"/>
 </form>

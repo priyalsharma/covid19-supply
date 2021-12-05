@@ -1,17 +1,11 @@
 #simple views
-create view View1
+create view 'View1'
 as
-select * 
-from product_stock
-where available_quantity > 0 && product_id != 000
-order by(product_name);
+select 'product_name' from 'product_stock';
 
 create view View2
 as
-select * 
-from delivery_staff
-where delivery_id !='000'
-order by(delivery_date);
+select * from delivery_staff where delivery_id !='DEL345' order by(delivery_date);
 
 #aggregate views
 create view View3

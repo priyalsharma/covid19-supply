@@ -28,13 +28,7 @@
 	supplier_id    :<input type="text" name="supplier_id" value="${form.supplier_id }"/>
 	<span style="color: red; font-weight: 900">${errors.supplier_id }</span>
 	<br/>
-<%-- 	Password：<input type="password" name="password" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
-	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
-	<br/> --%>
-	<input type="submit" value="Read supplier"/>
+	<input type="submit" value="Read Supplier"/>
 </form>
   </body>
 </html>

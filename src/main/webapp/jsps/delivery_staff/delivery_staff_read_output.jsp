@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Delivery_staff Output</title>
+    <title>Read Delivery Staff Output</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,7 +21,7 @@
   </head>
   
   <body>
-  <h1>Read Delivery_staff Output</h1>
+  <h1>Read Delivery Staff Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
 	delivery_id:<input type="text" name="delivery_id" value="${delivery_staff.delivery_id }" disabled/>

@@ -42,11 +42,20 @@ public class Delivery_staffServletUpdate extends HttpServlet {
 		String method = request.getParameter("method");
 		Delivery_staffDao delivery_staffDao = new Delivery_staffDao();
 		Delivery_staff delivery_staff = null;
-
+		
+		Map<String,String[]> paramMap = request.getParameterMap();
+		Delivery_staff form = new Delivery_staff();
+		List<String> info = new ArrayList<String>();
+		
+		for(String name : paramMap.keySet()) {
+			String[] values = paramMap.get(name);
+			info.add(values[0]);
+		}
+		
 		if(method.equals("search"))
 		{
 			try {
-				delivery_staff = delivery_staffDao.findBydelivery_id(request.getParameter("delivery_id"));
+				delivery_staff = delivery_staffDao.findBydelivery_id(info.get(1));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -55,7 +64,7 @@ public class Delivery_staffServletUpdate extends HttpServlet {
 				e1.printStackTrace();
 			}
 
-			if(delivery_staff.getSupplier_id()!=null){
+			if(delivery_staff.getDelivery_id() !=null){
 				request.setAttribute("delivery_staff", delivery_staff);
 				request.getRequestDispatcher("/jsps/delivery_staff/delivery_staff_update_output.jsp").forward(request, response);
 
@@ -67,18 +76,12 @@ public class Delivery_staffServletUpdate extends HttpServlet {
 		}
 		else if(method.equals("update"))
 		{
-			Map<String,String[]> paramMap = request.getParameterMap();
-			Delivery_staff form = new Delivery_staff();
-			List<String> info = new ArrayList<String>();
-
-			for(String name : paramMap.keySet()) {
-				String[] values = paramMap.get(name);
-				info.add(values[0]);
-			}
-			//form.setSupplier_name(method) (info.get(2));
-			//form.setEmail(info.get(3));
-			//form.setUsername(request.getParameter("supplier_id"));
-
+			form.setDelivery_id(info.get(1));
+			form.setDelivery_staff_id(info.get(2));
+			form.setDelivery_date(java.sql.Date.valueOf(info.get(3)));
+			form.setSupplier_id(info.get(4));
+			
+			
 			try {
 				delivery_staffDao.update(form);
 

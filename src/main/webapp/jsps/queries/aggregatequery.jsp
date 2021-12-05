@@ -8,20 +8,14 @@
 
 </head>
 <body>
-	<h3 align="center">Delivery Staff</h3>
+	<h3 align="center">SUM of Available Quantity</h3>
 	<table border="1" width="70%" align="center">
 	<tr>
-		<th>Delivery ID</th>
-		<th>Delivery Staff ID</th>
-		<th>Delivery Date</th>
-		<th>Supplier ID</th>
+		<th>Total Count of all Available Products</th>
 	</tr>
-<c:forEach items="${DeliveryStaff}" var="delivery_staff">
+<c:forEach items="${ProductQuantity}" var="product_stock">
 	<tr>
-		<td>${delivery_staff.delivery_id}</td>
-		<td>${delivery_staff.delivery_staff_id}</td>
-		<td>${delivery_staff.delivery_date}</td>
-		<td>${delivery_staff.supplier_id}</td>
+		<td>${product_stock.available_quantity}</td>
 	</tr>
 </c:forEach>
 </table>

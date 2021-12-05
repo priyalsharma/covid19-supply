@@ -5,9 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import product_stock.domain.Product_stock;
-import supplier.domain.Supplier;
 
 
 
@@ -97,9 +98,9 @@ public class Product_stockDao {
 			
 			String sql = "UPDATE product_stock SET product_name = ?, available_quantity = ?, supplier_id = ? where product_id = ?";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
-			preparestatement.setString(1,form.getSupplier_id());
-		    preparestatement.setString(2,form.getProduct_name());
-		    preparestatement.setInt(3,form.getAvailable_quantity());
+			preparestatement.setString(3,form.getSupplier_id());
+		    preparestatement.setString(1,form.getProduct_name());
+		    preparestatement.setInt(2,form.getAvailable_quantity());
 		    preparestatement.setString(4,form.getProduct_id());
 		    preparestatement.executeUpdate();
 		    connect.close();
@@ -130,4 +131,45 @@ public class Product_stockDao {
 		}
 	}
 	
+	public static List<Object> findProductQuantity() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/covid19_supply","root", "mvt@3107");
+			String sql = "select SUM(available_quantity) from product_stock;";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				Product_stock product_stock = new Product_stock();
+		    	product_stock.setAvailable_quantity(resultSet.getInt("SUM(available_quantity)"));
+		    	list.add(product_stock);
+		    }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+		
+	}
+	
+	public static List<Object> findProductName() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/covid19_supply","root", "mvt@3107");
+			String sql = "SELECT DISTINCT product_name  FROM product_stock WHERE EXISTS (SELECT * FROM supplier WHERE product_stock.supplier_id = supplier.supplier_id)";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				Product_stock product_stock = new Product_stock();
+		    	product_stock.setProduct_name(resultSet.getString("product_name"));
+		    	list.add(product_stock);
+		    }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+		
+	}
 }

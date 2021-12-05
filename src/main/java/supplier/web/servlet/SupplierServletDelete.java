@@ -49,7 +49,6 @@ public class SupplierServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-		
 			if(supplier.getSupplier_id()!=null){
 						System.out.println(supplier);
 						request.setAttribute("supplier", supplier);

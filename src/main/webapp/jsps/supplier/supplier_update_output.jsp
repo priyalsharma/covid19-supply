@@ -37,7 +37,7 @@
 		<input type="hidden" name="method" value="update"/>
 				<input type="hidden" name="supplier_id" value="${supplier.getSupplier_id()}"/>
 	
-	Supplier_name：<input type="password" name="supplier_name" value="${form.supplier_name}"/>
+	Supplier_name：<input type="text" name="supplier_name" value="${form.supplier_name}"/>
 	<span style="color: red; font-weight: 900">${errors.supplier_name }</span>
 	<br/>
 	Delivery_id	：<input type="text" name="delivery_id" value="${form.delivery_id }"/>

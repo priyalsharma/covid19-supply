@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Delivery_staff</title>
+    <title>Delete Delivery Staff</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,13 +21,13 @@
   </head>
   
   <body>
-  <h1>Delete Delivery_staff</h1>
+  <h1>Delete Delivery Staff</h1>
 <form action="<c:url value='/Delivery_staffServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
-	delivery_id   :<input type="text" name="delivery_id" value="${form.delivery_id }"/>
-	<span style="color: red; font-weight: 900">${errors.delivery_id }</span>
+	Delete Delivery Staff with delivery_id   :<input type="text" name="delivery_id" value="${form.delivery_id}"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_id}</span>
 	<br/>
-	<input type="submit" value="Delete delivery_staff"/>
+	<input type="submit" value="Delete Delivery Staff"/>
 </form>
   </body>
 </html>

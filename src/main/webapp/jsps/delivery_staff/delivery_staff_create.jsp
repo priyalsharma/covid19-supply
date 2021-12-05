@@ -21,7 +21,7 @@
   </head>
   
   <body>
-  <h1> Create Delivery_staff</h1>
+  <h1> Create Delivery Staff</h1>
 <form action="<c:url value='/Delivery_staffServletCreate'/>" method="post">
 	delivery_id    :<input type="text" name="delivery_id" value="${form.delivery_id }"/>
 	<span style="color: red; font-weight: 900">${errors.delivery_id }</span>
@@ -35,7 +35,7 @@
 	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id }"/>
 	<span style="color: red; font-weight: 900">${errors.supplier_id }</span>
 	<br/>
-	<input type="submit" value="Create delivery_staff"/>
+	<input type="submit" value="Create Delivery Staff"/>
 </form>
   </body>
 </html>

@@ -35,17 +35,17 @@
 	<br/>
 </form>
 <h1>Update the values below</h1>
-<form action="<c:url value='/Product_supplyServletUpdate'/>" method="post">
+<form action="<c:url value='/Product_stockServletUpdate'/>" method="post">
 		<input type="hidden" name="method" value="update"/>
-				<input type="hidden" name="product_id" value="${product_stock.product_id }"/>
-	product_name：<input type="password" name="product_name" value="${form.product_name }"/>
-	<span style="color: red; font-weight: 900">${errors.product_name }</span>
+				<input type="hidden" name="product_id" value="${product_stock.product_id}"/>
+	product_name：<input type="text" name="product_name" value="${form.product_name}"/>
+	<span style="color: red; font-weight: 900">${errors.product_name}</span>
 	<br/>
-	available_quantity	：<input type="text" name="available_quantity" value="${form.available_quantity }"/>
-	<span style="color: red; font-weight: 900">${errors.available_quantity }</span>
+	available_quantity	：<input type="number" name="available_quantity" value="${form.available_quantity}"/>
+	<span style="color: red; font-weight: 900">${errors.available_quantity}</span>
 	<br/>
-	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id }"/>
-	<span style="color: red; font-weight: 900">${errors.supplier_id }</span>
+	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id}"/>
+	<span style="color: red; font-weight: 900">${errors.supplier_id}</span>
 	<br/>
 	<input type="submit" value="Update Product Stock"/>
 </form>

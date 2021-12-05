@@ -27,7 +27,7 @@
 	product_id  :<input type="text" name="product_id" value="${form.product_id }"/>
 	<span style="color: red; font-weight: 900">${errors.product_id }</span>
 	<br/>
-	<input type="submit" value="Delete product_stock"/>
+	<input type="submit" value="Delete Product Stock"/>
 </form>
   </body>
 </html>

@@ -40,13 +40,22 @@ public class Product_stockServletUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String method = request.getParameter("method");
-		Product_stockDao product_stockDao = new Product_stockDao();
+		Product_stockDao Product_stockDao = new Product_stockDao();
 		Product_stock product_stock = null;
+		
+		Map<String,String[]> paramMap = request.getParameterMap();
+		Product_stock form = new Product_stock();
+		List<String> info = new ArrayList<String>();
+
+		for(String name : paramMap.keySet()) {
+			String[] values = paramMap.get(name);
+			info.add(values[0]);
+		}
 
 		if(method.equals("search"))
 		{
 			try {
-				product_stock = product_stockDao.findByproduct_id(request.getParameter("product_id"));
+				product_stock = Product_stockDao.findByproduct_id(info.get(1));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -67,20 +76,13 @@ public class Product_stockServletUpdate extends HttpServlet {
 		}
 		else if(method.equals("update"))
 		{
-			Map<String,String[]> paramMap = request.getParameterMap();
-			Product_stock form = new Product_stock();
-			List<String> info = new ArrayList<String>();
-
-			for(String name : paramMap.keySet()) {
-				String[] values = paramMap.get(name);
-				info.add(values[0]);
-			}
-			//form.setSupplier_name(method) (info.get(2));
-			//form.setEmail(info.get(3));
-			//form.setUsername(request.getParameter("supplier_id"));
+			form.setProduct_id(info.get(1));
+			form.setProduct_name(info.get(2));
+			form.setAvailable_quantity(Integer.valueOf(info.get(3)));
+			form.setSupplier_id(info.get(4));
 
 			try {
-				product_stockDao.update(form);
+				Product_stockDao.update(form);
 
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();

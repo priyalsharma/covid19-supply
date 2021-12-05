@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Entity</title>
+    <title>Update Delivery Staff</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,32 +21,32 @@
   </head>
   
   <body>
-  <h1>Update Delivery_staff</h1>
+  <h1>Update Delivery Staff</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	delivery_id:<input type="text" name="delivery_id" value="${delivery_staff.delivery_id }" disabled/>
+	delivery_id:<input type="text" name="delivery_id" value="${delivery_staff.delivery_id}" disabled/>
 	<br/>
-	delivery_staff_id:<input type="text" name="delivery_staff_id" value="${delivery_staff.delivery_staff_id }" disabled/>
+	delivery_staff_id:<input type="text" name="delivery_staff_id" value="${delivery_staff.delivery_staff_id}" disabled/>
 	<br/>
-	delivery_date	：<input type="text" name="delivery_date" value="${delivery_staff.delivery_date }" disabled/>
+	delivery_date	：<input type="text" name="delivery_date" value="${delivery_staff.delivery_date}" disabled/>
 	<br/>
-	supplier_id	：<input type="text" name="supplier_id" value="${delivery_staff.supplier_id }" disabled/>
+	supplier_id	：<input type="text" name="supplier_id" value="${delivery_staff.supplier_id}" disabled/>
 	<br/>
 </form>
 <h1>Update the values below</h1>
 <form action="<c:url value='/Delivery_staffServletUpdate'/>" method="post">
 		<input type="hidden" name="method" value="update"/>
-				<input type="hidden" name="delivery_id" value="${delivery_staff.delivery_id }"/>
-	delivery_staff_id：<input type="password" name="delivery_staff_id" value="${form.delivery_staff_id }"/>
+				<input type="hidden" name="delivery_id" value="${delivery_staff.delivery_id}"/>
+	delivery_staff_id：<input type="text" name="delivery_staff_id" value="${form.delivery_staff_id}"/>
 	<span style="color: red; font-weight: 900">${errors.delivery_staff_id }</span>
 	<br/>
-	delivery_date	：<input type="text" name="delivery_date" value="${form.delivery_date }"/>
+	delivery_date	：<input type="text" name="delivery_date" value="${form.delivery_date}"/>
 	<span style="color: red; font-weight: 900">${errors.delivery_date }</span>
 	<br/>
-	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id }"/>
+	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id}"/>
 	<span style="color: red; font-weight: 900">${errors.delivery_date }</span>
 	<br/>
-	<input type="submit" value="Update Delivery_staff"/>
+	<input type="submit" value="Update Delivery Staff"/>
 </form>
 
 </body>

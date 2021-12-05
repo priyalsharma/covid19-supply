@@ -27,7 +27,7 @@
 	Supplier_id    :<input type="text" name="supplier_id " value="${form.supplier_id}"/>
 	<span style="color: red; font-weight: 900">${errors.supplier_id}</span>
 	<br/>
-	<input type="submit" value="Update supplier_id"/>
+	<input type="submit" value="Update Supplier"/>
 </form>
   </body>
 </html>

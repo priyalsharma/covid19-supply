@@ -26,7 +26,7 @@
 	product_id    :<input type="text" name="product_id" value="${form.product_id }"/>
 	<span style="color: red; font-weight: 900">${errors.product_id }</span>
 	<br/>
-	product_name：<input type="password" name="product_name" value="${form.product_name }"/>
+	product_name：<input type="text" name="product_name" value="${form.product_name }"/>
 	<span style="color: red; font-weight: 900">${errors.product_name }</span>
 	<br/>
 	available_quantity	：<input type="text" name="available_quantity" value="${form.available_quantity }"/>
@@ -35,7 +35,7 @@
 	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id }"/>
 	<span style="color: red; font-weight: 900">${errors.supplier_id }</span>
 	<br/>
-	<input type="submit" value="Create product_stock"/>
+	<input type="submit" value="Create Product Stock"/>
 </form>
   </body>
 </html>

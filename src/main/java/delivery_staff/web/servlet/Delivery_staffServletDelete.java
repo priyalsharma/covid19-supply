@@ -1,6 +1,7 @@
 package delivery_staff.web.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,12 +37,14 @@ public class Delivery_staffServletDelete extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String method = request.getParameter("method");
-		Delivery_staffDao delivery_staffDao = new Delivery_staffDao();
+		Delivery_staffDao Delivery_staffDao = new Delivery_staffDao();
 		Delivery_staff delivery_staff = null;
+		
+
 		if(method.equals("search"))
 		{
 			try {
-				delivery_staff = delivery_staffDao.findBydelivery_id(request.getParameter("delivery_id"));
+				delivery_staff = Delivery_staffDao.findBydelivery_id(request.getParameter("delivery_id"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -49,7 +52,6 @@ public class Delivery_staffServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-		
 			if(delivery_staff.getDelivery_id()!=null){
 						System.out.println(delivery_staff);
 						request.setAttribute("delivery staff", delivery_staff);
@@ -63,7 +65,7 @@ public class Delivery_staffServletDelete extends HttpServlet {
 		else if(method.equals("delete"))
 		{	
 			try {
-				delivery_staffDao.delete(request.getParameter("delivery_id"));
+				Delivery_staffDao.delete(request.getParameter("delivery_id"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {

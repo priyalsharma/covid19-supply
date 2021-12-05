@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Read Delivery_staff</title>
+    <title>Read Delivery Staff</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,20 +21,14 @@
   </head>
   
   <body>
-  <h1>Read Delivery_staff</h1>
+  <h1>Read Delivery Staff</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/Delivery_staffServletRead'/>" method="post">
 	<input type="hidden" name="method" value="regist"/>
 	delivery_id     :<input type="text" name="delivery_id" value="${form.delivery_id }"/>
 	<span style="color: red; font-weight: 900">${errors.delivery_id }</span>
 	<br/>
-<%-- 	Password：<input type="password" name="password" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
-	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
-	<br/> --%>
-	<input type="submit" value="Read delivery_staff"/>
+	<input type="submit" value="Read Delivery Staff"/>
 </form>
   </body>
 </html>

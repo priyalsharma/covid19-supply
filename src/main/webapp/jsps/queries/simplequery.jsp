@@ -8,7 +8,7 @@
 
 </head>
 <body>
-	<h3 align="center">Delivery Staff</h3>
+	<h3 align="center">Delivery Staff Whose Delivery ID != 'DEL345' ordered by Delivery Date</h3>
 	<table border="1" width="70%" align="center">
 	<tr>
 		<th>Delivery ID</th>

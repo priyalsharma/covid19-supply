@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Delivery_staff</title>
+    <title>Delete Delivery Staff</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,20 +21,20 @@
   </head>
   
   <body>
-  <h1>Delete Delivery_staff</h1>
+  <h1>Delete Delivery Staff</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/Delivery_staffServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="delete"/>
-		<input type="hidden" name="username" value="${delivery_staff.delivery_id }"/>
-	delivery_id:<input type="text" name="delivery_id" value="${delivery_staff.delivery_id }" disabled/>
+		<input type="hidden" name="delivery_id" value="${delivery_staff.delivery_id}"/>
+	delivery_id:<input type="text" name="delivery_id" value="${delivery_staff.delivery_id}" disabled/>
 	<br/>
-	delivery_staff_id:<input type="text" name="delivery_staff_id" value="${delivery_staff.delivery_staff_id }" disabled/>
+	delivery_staff_id:<input type="text" name="delivery_staff_id" value="${delivery_staff.delivery_staff_id}" disabled/>
 	<br/>
-	delivery_date	：<input type="text" name="delivery_date" value="${delivery_staff.delivery_date }" disabled/>
+	delivery_date	：<input type="date" name="delivery_date" value="${delivery_staff.delivery_date}" disabled/>
 	<br/>
-	supplier_id	：<input type="text" name="supplier_id" value="${delivery_staff.supplier_id }" disabled/>
+	supplier_id	：<input type="text" name="supplier_id" value="${delivery_staff.supplier_id}" disabled/>
 	<br/>
-	<input type="submit" value="Delete Delivery_staff"/>
+	<input type="submit" value="Delete Delivery Staff"/>
 </form>
 
 </body>

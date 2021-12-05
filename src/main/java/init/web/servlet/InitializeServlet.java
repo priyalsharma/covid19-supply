@@ -43,7 +43,7 @@ public class InitializeServlet extends HttpServlet {
 
 		try {
 			initService.initializeDB(input);
-			response.sendRedirect( request.getContextPath() + "/jsps/user/login.jsp");
+			response.sendRedirect( request.getContextPath() + "/jsps/initializeDb.jsp");
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | InitException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

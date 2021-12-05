@@ -22,7 +22,7 @@
   </head>
   
   <body>
-    <h2>CRUD operations for product_stock </h2>
+    <h2>CRUD Operations for Product Stock </h2>
     <br>
 	<a href="<c:url value='/jsps/product_stock/product_stock_create.jsp'/>" target="_parent">Create product_stock</a> |&nbsp; 
 	<a href="<c:url value='/jsps/product_stock/product_stock_read.jsp'/>" target="_parent">Read product_stock</a> |&nbsp;

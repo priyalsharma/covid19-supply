@@ -1,4 +1,4 @@
-package delivery_staff.web.servlet;
+package product_stock.web.servlet;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import delivery_staff.service.Delivery_staffService;
+import product_stock.service.Product_stockService;
 
 /**
  * Servlet implementation class findAll
  */
 
-public class findDelivery_staff extends HttpServlet {
+public class findProductQuantity extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,16 +27,16 @@ public class findDelivery_staff extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Delivery_staffService delivery_staff = new Delivery_staffService();
+		Product_stockService product_stock = new Product_stockService();
 		try {
-			request.setAttribute("DeliveryStaff", delivery_staff.findDelivery_staff());
+			request.setAttribute("ProductQuantity", product_stock.findProductQuantity());
 		} catch (InstantiationException | IllegalAccessException
 				| ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
-			List<Object> li = delivery_staff.findDelivery_staff();
+			List<Object> li = product_stock.findProductQuantity();
 			for(int i = 0; i < li.size();i++){
 				System.out.println(li.get(i).toString());
 			}
@@ -48,7 +48,7 @@ public class findDelivery_staff extends HttpServlet {
 		}
 		
 		
-		request.getRequestDispatcher("/jsps/queries/simplequery.jsp").forward(request, response);
+		request.getRequestDispatcher("/jsps/queries/aggregatequery.jsp").forward(request, response);
 	}
 
 }

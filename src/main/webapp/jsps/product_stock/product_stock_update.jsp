@@ -22,12 +22,12 @@
   
   <body>
   <h1>Update Product Supply</h1>
-<form action="<c:url value='/Product_supplyServletUpdate'/>" method="post">
+<form action="<c:url value='/Product_stockServletUpdate'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
 	product_id   :<input type="text" name="product_id" value="${form.product_id }"/>
 	<span style="color: red; font-weight: 900">${errors.product_id }</span>
 	<br/>
-	<input type="submit" value="Update product_supply"/>
+	<input type="submit" value="Update Product Supply"/>
 </form>
   </body>
 </html>

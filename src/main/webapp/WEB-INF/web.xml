@@ -206,6 +206,30 @@
   
   <servlet>
     <description></description>
+    <display-name>findProductName</display-name>
+    <servlet-name>findProductName</servlet-name>
+    
+    <servlet-class>product_stock.web.servlet.findProductName</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findProductName</servlet-name>
+    <url-pattern>/findProductName</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>findProductQuantity</display-name>
+    <servlet-name>findProductQuantity</servlet-name>
+    
+    <servlet-class>product_stock.web.servlet.findProductQuantity</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findProductQuantity</servlet-name>
+    <url-pattern>/findProductQuantity</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
     <display-name>UserServletRegister</display-name>
     <servlet-name>UserServletRegister</servlet-name>
     <servlet-class>user.web.servlet.UserServletRegister</servlet-class>

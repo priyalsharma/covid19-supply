@@ -1,4 +1,4 @@
-package product_stock.web.servlet;
+package customer.web.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,21 +6,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import product_stock.dao.Product_stockDao;
-import product_stock.domain.Product_stock;
+import customer.dao.CustomerDao;
+import customer.domain.Customer;
 
 
 /**
  * Servlet implementation class UserServlet
  */
 
-public class Product_stockServletDelete extends HttpServlet {
+public class CustomerServletDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Product_stockServletDelete() {
+    public CustomerServletDelete() {
         super();
     }
     
@@ -36,13 +36,13 @@ public class Product_stockServletDelete extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String method = request.getParameter("method");
-		Product_stockDao Product_stockDao = new Product_stockDao();
-		Product_stock product_stock = null;
+		CustomerDao customerDao = new CustomerDao();
+		Customer customer = null;
 		if(method.equals("search"))
 		{
-			System.out.println(request.getParameter("product_id"));
+			//System.out.println(request.getParameter("customer_id"));
 			try {
-				product_stock = Product_stockDao.findByproduct_id(request.getParameter("product_id"));
+				customer = customerDao.findBycustomer_id(request.getParameter("customer_id"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -50,21 +50,21 @@ public class Product_stockServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-		
-			if(product_stock.getProduct_id()!=null){
-						System.out.println(product_stock.getProduct_id());
-						request.setAttribute("form", product_stock);
-						request.getRequestDispatcher("/jsps/product_stock/product_stock_delete_output.jsp").forward(request, response);			
+			if(customer.getCustomer_id() !=null){
+						//System.out.println(customer);
+						request.setAttribute("customer", customer);
+						request.getRequestDispatcher("/jsps/customer/customer_delete_output.jsp").forward(request, response);			
 				}
 				else{
-				request.setAttribute("msg", "Product Stock not found");
-				request.getRequestDispatcher("/jsps/product_stock/product_stock_read_output.jsp").forward(request, response);
+				request.setAttribute("msg", "Customer not found");
+				request.getRequestDispatcher("/jsps/customer/customer_read_output.jsp").forward(request, response);
 			}
 		}
 		else if(method.equals("delete"))
 		{	
 			try {
-				Product_stockDao.delete(request.getParameter("product_id"));
+				System.out.println(request.getParameter("customer_id"));
+				customerDao.delete(request.getParameter("customer_id"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -72,8 +72,8 @@ public class Product_stockServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-			request.setAttribute("msg", "Product Stock Deleted");
-			request.getRequestDispatcher("/jsps/product_stock/product_stock_read_output.jsp").forward(request, response);
+			request.setAttribute("msg", "Customer Deleted");
+			request.getRequestDispatcher("/jsps/customer/customer_read_output.jsp").forward(request, response);
 		}
 	}	
 }

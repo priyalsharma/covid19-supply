@@ -26,7 +26,7 @@
 	supplier_id    :<input type="text" name="supplier_id" value="${form.supplier_id }"/>
 	<span style="color: red; font-weight: 900">${errors.supplier_id }</span>
 	<br/>
-	supplier_name ：<input type="password" name="supplier_name" value="${form.supplier_name }"/>
+	supplier_name ：<input type="text" name="supplier_name" value="${form.supplier_name }"/>
 	<span style="color: red; font-weight: 900">${errors.supplier_name }</span>
 	<br/>
 	delivery_id	：<input type="text" name="delivery_id" value="${form.delivery_id }"/>

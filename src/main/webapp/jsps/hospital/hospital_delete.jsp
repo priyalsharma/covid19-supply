@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete hospital</title>
+    <title>Delete Hospital</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,13 +21,13 @@
   </head>
   
   <body>
-  <h1>Delete hospital</h1>
-<form action="<c:url value='/Entity1ServletDelete'/>" method="post">
+  <h1>Delete Hospital</h1>
+<form action="<c:url value='/HospitalServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="search"/>
-	hospital_id   :<input type="text" name="hospital_id" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+	hospital_id   :<input type="text" name="hospital_id" value="${hospital.hospital_id}"/>
+	<span style="color: red; font-weight: 900">${errors.hospital_id}</span>
 	<br/>
-	<input type="submit" value="Delete hospital"/>
+	<input type="submit" value="Delete Hospital"/>
 </form>
   </body>
 </html>

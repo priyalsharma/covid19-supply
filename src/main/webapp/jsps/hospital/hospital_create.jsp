@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Create hospital</title>
+    <title>Create Hospital</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,21 +21,21 @@
   </head>
   
   <body>
-  <h1>Create hospital</h1>
-<form action="<c:url value='/Entity1ServletCreate'/>" method="post">
-	hospital_id    :<input type="text" name="hospital_id" value="${form.username }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+  <h1>Create Hospital</h1>
+<form action="<c:url value='/HospitalServletCreate'/>" method="post">
+	hospital_id    :<input type="text" name="hospital_id" value="${form.hospital_id }"/>
+	<span style="color: red; font-weight: 900">${errors.hospital_id }</span>
 	<br/>
-	hospital_name：<input type="password" name="hospital_name" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+	hospital_name：<input type="text" name="hospital_name" value="${form.hospital_name }"/>
+	<span style="color: red; font-weight: 900">${errors.hospital_name }</span>
 	<br/>
-	hospital_address	：<input type="text" name="hospital_address" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	hospital_address	：<input type="text" name="hospital_address" value="${form.hospital_address }"/>
+	<span style="color: red; font-weight: 900">${errors.hospital_address }</span>
 	<br/>
-	delivery_id	：<input type="text" name="hospital_address" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	delivery_id	：<input type="text" name="delivery_id" value="${form.delivery_id }"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_id }</span>
 	<br/>
-	<input type="submit" value="Create hospital"/>
+	<input type="submit" value="Create Hospital"/>
 </form>
   </body>
 </html>

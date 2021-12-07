@@ -25,15 +25,14 @@
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/Product_stockServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="delete"/>
-		<input type="hidden" name="product_id" value="${product_stock.product_id }"/>
-	product_id    :<input type="text" name="product_id" value="${product_stock.product_id }" disabled/>
+		<input type="hidden" name="product_id" value="${form.product_id }"/>
+	product_id    :<input type="text" name="product_id" value="${form.product_id }" disabled/>
 	<br/>
-	
-	product_name ：<input type="text" name="product_name" value="${product_stock.product_name }" disabled/>
+	product_name ：<input type="text" name="product_name" value="${form.product_name }" disabled/>
 	<br/>
-	available_quantity	：<input type="text" name="available_quantity" value="${product_stock.available_quantity }" disabled/>
+	available_quantity	：<input type="text" name="available_quantity" value="${form.available_quantity }" disabled/>
 	<br/>
-	supplier_id	：<input type="text" name="supplier_id" value="${product_stock.supplier_id }" disabled/>
+	supplier_id	：<input type="text" name="supplier_id" value="${form.supplier_id }" disabled/>
 	<br/>
 	<input type="submit" value="Delete Product Stock"/>
 </form>

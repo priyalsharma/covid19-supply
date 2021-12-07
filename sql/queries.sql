@@ -1,25 +1,26 @@
 #simple views
-create view 'View1'
+create view View1
 as
-select 'product_name' from 'product_stock';
+select product_name from product_stock;
 
 create view View2
 as
 select * from delivery_staff where delivery_id !='DEL345' order by(delivery_date);
 
+
 #aggregate views
 create view View3
-as
-select product_id,lower(product_name),abs(available_quantity) as Available_prod_quantity
-from product_stock;
-
-create view View4
 as
 select delivery_id
 from delivery_staff
 where delivery_date = curdate()
 group by delivery_id
 having count(delivery_id)>=1;
+
+create view View4
+as
+select SUM(available_quantity) from product_stock;
+
 
 #complex views
 create view View5

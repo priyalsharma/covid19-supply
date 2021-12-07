@@ -191,6 +191,94 @@
     <servlet-name>Product_stockServletDelete</servlet-name>
     <url-pattern>/Product_stockServletDelete</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HospitalServletCreate</display-name>
+    <servlet-name>HospitalServletCreate</servlet-name>
+    <servlet-class>hospital.web.servlet.HospitalServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HospitalServletCreate</servlet-name>
+    <url-pattern>/HospitalServletCreate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>HospitalServletRead</display-name>
+    <servlet-name>HospitalServletRead</servlet-name>
+    <servlet-class>hospital.web.servlet.HospitalServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HospitalServletRead</servlet-name>
+    <url-pattern>/HospitalServletRead</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>HospitalServletUpdate</display-name>
+    <servlet-name>HospitalServletUpdate</servlet-name>
+    <servlet-class>hospital.web.servlet.HospitalServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HospitalServletUpdate</servlet-name>
+    <url-pattern>/HospitalServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>HospitalServletDelete</display-name>
+    <servlet-name>HospitalServletDelete</servlet-name>
+    <servlet-class>hospital.web.servlet.HospitalServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HospitalServletDelete</servlet-name>
+    <url-pattern>/HospitalServletDelete</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>CustomerServletCreate</display-name>
+    <servlet-name>CustomerServletCreate</servlet-name>
+    <servlet-class>customer.web.servlet.CustomerServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerServletCreate</servlet-name>
+    <url-pattern>/CustomerServletCreate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>CustomerServletRead</display-name>
+    <servlet-name>CustomerServletRead</servlet-name>
+    <servlet-class>customer.web.servlet.CustomerServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerServletRead</servlet-name>
+    <url-pattern>/CustomerServletRead</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>CustomerServletUpdate</display-name>
+    <servlet-name>CustomerServletUpdate</servlet-name>
+    <servlet-class>customer.web.servlet.CustomerServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerServletUpdate</servlet-name>
+    <url-pattern>/CustomerServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>CustomerServletDelete</display-name>
+    <servlet-name>CustomerServletDelete</servlet-name>
+    <servlet-class>customer.web.servlet.CustomerServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerServletDelete</servlet-name>
+    <url-pattern>/CustomerServletDelete</url-pattern>
+  </servlet-mapping>
+  
   
   <servlet>
     <description></description>

@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Entity</title>
+    <title>Update Hospital</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,28 +21,32 @@
   </head>
   
   <body>
-  <h1>Update Entity</h1>
+  <h1>Update Hospital</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form>
-	User    :<input type="text" name="username1" value="${entity1.username }" disabled/>
+	hospital_id    :<input type="text" name="hospital_id" value="${hospital.hospital_id}" disabled/>
 	<br/>
-	
-	Password：<input type="text" name="password1" value="${entity1.password }" disabled />
+	hospital_name：<input type="text" name="hospital_name" value="${hospital.hospital_name}" disabled/>
 	<br/>
-	Email	：<input type="text" name="email1" value="${entity1.email }" disabled/>
+	hospital_address	：<input type="text" name="customer_address" value="${hospital.hospital_address}" disabled/>
+	<br/>
+	delivery_id    :<input type="text" name="delivery_id" value="${hospital.delivery_id }" disabled/>
 	<br/>
 </form>
 <h1>Update the values below</h1>
-<form action="<c:url value='/Entity1ServletUpdate'/>" method="post">
+<form action="<c:url value='/HospitalServletUpdate'/>" method="post">
 		<input type="hidden" name="method" value="update"/>
-				<input type="hidden" name="username" value="${entity1.username }"/>
-	Password：<input type="password" name="password" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.password }</span>
+				<input type="hidden" name="username" value="${hospital.hospital_id}"/>
+	hospital_name：<input type="text" name="hospital_name" value="${form.hospital_name }"/>
+	<span style="color: red; font-weight: 900">${errors.hospital_name }</span>
 	<br/>
-	Email	：<input type="text" name="email" value="${form.email }"/>
-	<span style="color: red; font-weight: 900">${errors.email }</span>
+	hospital_address	：<input type="text" name="hospital_address" value="${form.hospital_address }"/>
+	<span style="color: red; font-weight: 900">${errors.hospital_address }</span>
 	<br/>
-	<input type="submit" value="Update Entity1"/>
+	delivery_id	：<input type="text" name="delivery_id" value="${form.delivery_id }"/>
+	<span style="color: red; font-weight: 900">${errors.delivery_id }</span>
+	<br/>
+	<input type="submit" value="Update Hospital"/>
 </form>
 
 </body>

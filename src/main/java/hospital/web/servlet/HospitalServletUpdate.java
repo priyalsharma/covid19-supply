@@ -1,4 +1,4 @@
-package delivery_staff.web.servlet;
+package hospital.web.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,54 +10,54 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import delivery_staff.dao.Delivery_staffDao;
-import delivery_staff.domain.Delivery_staff;
-
+import hospital.dao.HospitalDao;
+import hospital.domain.Hospital;
 
 /**
  * Servlet implementation class UserServlet
  */
 
-public class Delivery_staffServletDelete extends HttpServlet {
+public class HospitalServletUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Delivery_staffServletDelete() {
-        super();
-    }
-    
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public HospitalServletUpdate() {
+		super();
+	}
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request,response);
 	}
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		String method = request.getParameter("method");
-		Delivery_staffDao Delivery_staffDao = new Delivery_staffDao();
-		Delivery_staff delivery_staff = null;
+		HospitalDao hospitalDao = new HospitalDao();
+		Hospital hospital = null;
+		
 		Map<String,String[]> paramMap = request.getParameterMap();
-		Delivery_staff form = new Delivery_staff();
+		Hospital form = new Hospital();
 		List<String> info = new ArrayList<String>();
 
 		for(String name : paramMap.keySet()) {
 			String[] values = paramMap.get(name);
 			info.add(values[0]);
 		}
+		System.out.println(info.get(0));
 		System.out.println(info.get(1));
-		
 
 		if(method.equals("search"))
 		{
 			try {
-				
-				delivery_staff = Delivery_staffDao.findBydelivery_id(info.get(1));
+				hospital = hospitalDao.findByhospital_id(info.get(1));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -65,20 +65,28 @@ public class Delivery_staffServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-			if(delivery_staff.getDelivery_id()!=null){
-						System.out.println(delivery_staff.getDelivery_id());
-						request.setAttribute("delivery_staff", delivery_staff);
-						request.getRequestDispatcher("/jsps/delivery_staff/delivery_staff_delete_output.jsp").forward(request, response);			
-				}
-				else{
-				request.setAttribute("msg", "Delivery Staff not found");
-				request.getRequestDispatcher("/jsps/delivery_staff/delivery_staff_read_output.jsp").forward(request, response);
+
+			if(hospital.getHospital_id() !=null){
+				request.setAttribute("hospital", hospital);
+				request.getRequestDispatcher("/jsps/hospital/hospital_update_output.jsp").forward(request, response);
+
+			}
+			else{
+				request.setAttribute("msg", "Hospital not found");
+				request.getRequestDispatcher("/jsps/hospital/hospital_read_output.jsp").forward(request, response);
 			}
 		}
-		else if(method.equals("delete"))
-		{	
+		else if(method.equals("update"))
+		{
+
+			form.setHospital_id(info.get(1));
+			form.setHospital_name(info.get(2));
+			form.setHospital_address(info.get(3));
+			form.setDelivery_id(info.get(4));
+
 			try {
-				Delivery_staffDao.delete(request.getParameter("delivery_id"));
+				hospitalDao.update(form);
+
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -86,8 +94,8 @@ public class Delivery_staffServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-			request.setAttribute("msg", "Delivery Staff Deleted");
-			request.getRequestDispatcher("/jsps/delivery_staff/delivery_staff_read_output.jsp").forward(request, response);
+			request.setAttribute("msg", "Hospital Updated");
+			request.getRequestDispatcher("/jsps/hospital/hospital_read_output.jsp").forward(request, response);
 		}
-	}	
+	}
 }

@@ -1,4 +1,4 @@
-package delivery_staff.web.servlet;
+package customer.web.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,54 +10,54 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import delivery_staff.dao.Delivery_staffDao;
-import delivery_staff.domain.Delivery_staff;
-
+import customer.dao.CustomerDao;
+import customer.domain.Customer;
 
 /**
  * Servlet implementation class UserServlet
  */
 
-public class Delivery_staffServletDelete extends HttpServlet {
+public class CustomerServletUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Delivery_staffServletDelete() {
-        super();
-    }
-    
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public CustomerServletUpdate() {
+		super();
+	}
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request,response);
 	}
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		String method = request.getParameter("method");
-		Delivery_staffDao Delivery_staffDao = new Delivery_staffDao();
-		Delivery_staff delivery_staff = null;
+		CustomerDao customerDao = new CustomerDao();
+		Customer customer = null;
+		
 		Map<String,String[]> paramMap = request.getParameterMap();
-		Delivery_staff form = new Delivery_staff();
+		Customer form = new Customer();
 		List<String> info = new ArrayList<String>();
 
 		for(String name : paramMap.keySet()) {
 			String[] values = paramMap.get(name);
 			info.add(values[0]);
 		}
+		System.out.println(info.get(0));
 		System.out.println(info.get(1));
-		
 
 		if(method.equals("search"))
 		{
 			try {
-				
-				delivery_staff = Delivery_staffDao.findBydelivery_id(info.get(1));
+				customer = customerDao.findBycustomer_id(info.get(1));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -65,20 +65,29 @@ public class Delivery_staffServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-			if(delivery_staff.getDelivery_id()!=null){
-						System.out.println(delivery_staff.getDelivery_id());
-						request.setAttribute("delivery_staff", delivery_staff);
-						request.getRequestDispatcher("/jsps/delivery_staff/delivery_staff_delete_output.jsp").forward(request, response);			
-				}
-				else{
-				request.setAttribute("msg", "Delivery Staff not found");
-				request.getRequestDispatcher("/jsps/delivery_staff/delivery_staff_read_output.jsp").forward(request, response);
+
+			if(customer.getCustomer_id() !=null){
+				request.setAttribute("customer", customer);
+				request.getRequestDispatcher("/jsps/customer/customer_update_output.jsp").forward(request, response);
+
+			}
+			else{
+				request.setAttribute("msg", "Customer not found");
+				request.getRequestDispatcher("/jsps/customer/customer_read_output.jsp").forward(request, response);
 			}
 		}
-		else if(method.equals("delete"))
-		{	
+		else if(method.equals("update"))
+		{
+
+			form.setCustomer_id(info.get(1));
+			form.setCustomer_name(info.get(2));
+			form.setCustomer_address(info.get(3));
+			form.setCustomer_age(Integer.valueOf(info.get(4)));
+			form.setDelivery_id(info.get(5));
+
 			try {
-				Delivery_staffDao.delete(request.getParameter("delivery_id"));
+				customerDao.update(form);
+
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -86,8 +95,8 @@ public class Delivery_staffServletDelete extends HttpServlet {
 			} catch (IllegalAccessException e1) {
 				e1.printStackTrace();
 			}
-			request.setAttribute("msg", "Delivery Staff Deleted");
-			request.getRequestDispatcher("/jsps/delivery_staff/delivery_staff_read_output.jsp").forward(request, response);
+			request.setAttribute("msg", "Customer Updated");
+			request.getRequestDispatcher("/jsps/customer/customer_read_output.jsp").forward(request, response);
 		}
-	}	
+	}
 }

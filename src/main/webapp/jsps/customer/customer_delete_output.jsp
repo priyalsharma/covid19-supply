@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>Delete Entity</title>
+    <title>Delete Customer</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,19 +21,22 @@
   </head>
   
   <body>
-  <h1>Delete Entity</h1>
+  <h1>Delete Customer</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/Entity1ServletDelete'/>" method="post">
+<form action="<c:url value='/CustomerServletDelete'/>" method="post">
 	<input type="hidden" name="method" value="delete"/>
-		<input type="hidden" name="username" value="${entity1.username }"/>
-	User    :<input type="text" name="username" value="${entity1.username }" disabled/>
+		<input type="hidden" name="customer_id" value="${customer.customer_id}"/>
+	customer_id    :<input type="text" name="customer_id" value="${customer.customer_id}" disabled/>
 	<br/>
-	
-	Password：<input type="text" name="password" value="${entity1.password }" disabled/>
+	customer_name：<input type="text" name="customer_name" value="${customer.customer_name}" disabled/>
 	<br/>
-	Email	：<input type="text" name="email" value="${entity1.email }" disabled/>
+	customer_address	：<input type="text" name="customer_address" value="${customer.customer_address}" disabled/>
 	<br/>
-	<input type="submit" value="Delete Entity1"/>
+	customer_age	：<input type="text" name="customer_age" value="${customer.customer_age}" disabled/>
+	<br/>
+	delivery_id    :<input type="text" name="delivery_id" value="${customer.delivery_id }" disabled/>
+	<br/>
+	<input type="submit" value="Delete Customer"/>
 </form>
 
 </body>

@@ -32,6 +32,10 @@
     <br>
     <a href="<c:url value='/findProductQuantity'/>" target="body">Total Count of all Available Products</a>&nbsp;&nbsp;
     <br>
-    
+    <a href="<c:url value='/findHospital'/>" target="body">Hospital Names</a>&nbsp;&nbsp;
+    <br>
+    <a href="<c:url value='/findCustomer'/>" target="body">Hospital and Customer cross join</a>&nbsp;&nbsp;
+ 
+    <br>
   </body>
 </html>

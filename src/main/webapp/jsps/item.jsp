@@ -29,7 +29,10 @@
     <a href="<c:url value='/findProductName'/>" target="body">Please list all Product Names</a>&nbsp;&nbsp;
     <br>
     <a href="<c:url value='/findDelivery_staff'/>" target="body">Please list all the Delivery Staff</a>&nbsp;&nbsp;
- 
+    <br>
+   <a href="<c:url value='/findHospital'/>" target="body">Hospital Names</a>&nbsp;&nbsp;
+    <br>
+    <a href="<c:url value='/findCustomer'/>" target="body">Hospital and Customer cross join</a>&nbsp;&nbsp;
     
   </body>
 </html>

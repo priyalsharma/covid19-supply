@@ -1,12 +1,15 @@
 package customer.service;
 
 
+import java.util.List;
+
 import customer.dao.CustomerDao;
 import customer.domain.Customer;
+import hospital.dao.HospitalDao;
 
 /**
  * logic functions such as register, login
- * @author Vineeth Myneedi
+ * @author Priyal Sharma
  *
  */
 public class CustomerService {
@@ -25,4 +28,8 @@ public class CustomerService {
 		if(customer.getCustomer_id() !=null && customer.getCustomer_id().equals(form.getCustomer_id())) throw new CustomerException("This user name has been registered!");
 		customerDao.createCustomer(form);
 	}
+	
+	public List<Object> findCustomer() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		return CustomerDao.findCustomer();
+}
 }

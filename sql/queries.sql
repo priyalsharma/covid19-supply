@@ -1,7 +1,7 @@
 #simple views
 create view View1
 as
-select product_name from product_stock;
+select hospital_name from hospital;
 
 create view View2
 as

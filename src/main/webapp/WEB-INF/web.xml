@@ -291,7 +291,34 @@
     <servlet-name>findDelivery_staff</servlet-name>
     <url-pattern>/findDelivery_staff</url-pattern>
   </servlet-mapping>
+
+
+<servlet>
+    <description></description>
+    <display-name>findHospital</display-name>
+    <servlet-name>findHospital</servlet-name>
+    
+    <servlet-class>hospital.web.servlet.findHospital</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findHospital</servlet-name>
+    <url-pattern>/findHospital</url-pattern>
+  </servlet-mapping>
+
   
+<servlet>
+    <description></description>
+    <display-name>findCustomer</display-name>
+    <servlet-name>findCustomer</servlet-name>
+    
+    <servlet-class>customer.web.servlet.findCustomer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findCustomer</servlet-name>
+    <url-pattern>/findCustomer</url-pattern>
+  </servlet-mapping>
+
+
   <servlet>
     <description></description>
     <display-name>findProductName</display-name>
